@@ -1,0 +1,75 @@
+.songwriting {
+  padding: 80px 24px;
+  background: var(--bg-primary);
+}
+
+.songwriting__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.songwriting__header {
+  margin-bottom: 48px;
+}
+
+.songwriting__eyebrow {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-primary);
+  margin-bottom: 8px;
+}
+
+.songwriting__title {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 4vw, 44px);
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -1px;
+  margin-bottom: 12px;
+}
+
+.songwriting__desc {
+  font-size: 16px;
+  color: var(--text-secondary);
+  max-width: 480px;
+}
+
+.songwriting__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.songwriting__video {
+  background: var(--bg-card);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.songwriting__video:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card);
+}
+
+.songwriting__video iframe {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  height: auto;
+}
+
+@media (max-width: 900px) {
+  .songwriting__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .songwriting__grid {
+    grid-template-columns: 1fr;
+  }
+}

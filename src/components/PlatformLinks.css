@@ -1,0 +1,120 @@
+.platforms {
+  padding: 80px 24px;
+  background: var(--bg-secondary);
+}
+
+.platforms__inner {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.platforms__eyebrow {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-primary);
+  margin-bottom: 8px;
+}
+
+.platforms__title {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 4vw, 44px);
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -1px;
+  margin-bottom: 48px;
+}
+
+.platforms__grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+}
+
+.platforms__card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 24px 20px;
+  transition: all 0.25s;
+  position: relative;
+  overflow: hidden;
+}
+
+.platforms__card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--platform-color);
+  opacity: 0;
+  transition: opacity 0.25s;
+}
+
+.platforms__card:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--platform-color, var(--border-accent));
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card);
+}
+
+.platforms__card:hover::after {
+  opacity: 1;
+}
+
+.platforms__icon {
+  font-size: 26px;
+  line-height: 1;
+}
+
+.platforms__info {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.platforms__sublabel {
+  font-size: 11px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.platforms__name {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.platforms__arrow {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 16px;
+  color: var(--text-muted);
+  transition: transform 0.2s, color 0.2s;
+}
+
+.platforms__card:hover .platforms__arrow {
+  transform: translateX(4px);
+  color: var(--text-secondary);
+}
+
+@media (max-width: 900px) {
+  .platforms__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .platforms__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
