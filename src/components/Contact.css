@@ -82,6 +82,11 @@
   box-shadow: 0 0 0 3px rgba(192, 132, 252, 0.15);
 }
 
+.contact__error {
+  font-size: 14px;
+  color: #f87171;
+}
+
 .contact__submit {
   display: inline-flex;
   align-items: center;

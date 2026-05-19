@@ -3,15 +3,29 @@ import './Contact.css';
 
 export function Contact() {
   const [form, setForm] = useState({ name: '', email: '', subject: '', message: '' });
-  const [sent, setSent] = useState(false);
+  const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle');
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setForm(prev => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSent(true);
+    setStatus('sending');
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          access_key: import.meta.env.VITE_WEB3FORMS_KEY,
+          ...form,
+        }),
+      });
+      const data = await res.json();
+      setStatus(data.success ? 'sent' : 'error');
+    } catch {
+      setStatus('error');
+    }
   };
 
   return (
@@ -25,7 +39,7 @@ export function Contact() {
           </p>
         </div>
 
-        {sent ? (
+        {status === 'sent' ? (
           <div className="contact__success">
             <span className="contact__success-icon">✓</span>
             <h3>Message sent!</h3>
@@ -90,9 +104,13 @@ export function Contact() {
               />
             </div>
 
-            <button type="submit" className="contact__submit">
-              Send Message
-              <span className="contact__submit-arrow">→</span>
+            {status === 'error' && (
+              <p className="contact__error">Something went wrong. Please try again.</p>
+            )}
+
+            <button type="submit" className="contact__submit" disabled={status === 'sending'}>
+              {status === 'sending' ? 'Sending…' : 'Send Message'}
+              {status !== 'sending' && <span className="contact__submit-arrow">→</span>}
             </button>
           </form>
         )}
