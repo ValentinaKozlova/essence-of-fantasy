@@ -3,9 +3,7 @@
   border-top: 1px solid var(--border);
 }
 
-.footer__inner {
-  max-width: 1280px;
-  margin: 0 auto;
+.footer .inner {
   padding: 48px 24px 40px;
   display: flex;
   align-items: center;

@@ -4,16 +4,13 @@
   left: 0;
   right: 0;
   z-index: 100;
-  padding: 0 24px;
   background: rgba(10, 10, 15, 0.75);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--border);
 }
 
-.navbar__inner {
-  max-width: 1280px;
-  margin: 0 auto;
+.navbar .inner {
   height: 68px;
   display: flex;
   align-items: center;
@@ -59,7 +56,7 @@
 }
 
 .navbar__links a {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 500;
   color: var(--text-secondary);
   transition: color 0.2s;

@@ -4,7 +4,7 @@ import './Artists.css';
 export function Artists() {
   return (
     <section className="artists" id="artists">
-      <div className="artists__inner">
+      <div className="inner">
         <div className="artists__header">
           <p className="artists__label">Spotlight</p>
           <h2 className="artists__title">Featured Artists</h2>

@@ -6,11 +6,11 @@ export function Navbar() {
 
   return (
     <nav className="navbar">
-      <div className="navbar__inner">
-        <a href="#" className="navbar__logo">
+      <div className="inner">
+        {/* <a href="#" className="navbar__logo">
           <span className="navbar__logo-icon">◈</span>
           <span className="navbar__logo-text">Essence<span className="navbar__logo-accent">of Fantasy</span></span>
-        </a>
+        </a> */}
 
         <ul className={`navbar__links ${mobileOpen ? 'navbar__links--open' : ''}`}>
           <li><a href="#songwriting" onClick={() => setMobileOpen(false)}>Song Writing</a></li>

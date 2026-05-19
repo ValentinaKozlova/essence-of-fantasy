@@ -3,11 +3,6 @@
   background: var(--bg-primary);
 }
 
-.artists__inner {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 0 24px;
-}
 
 .artists__header {
   text-align: center;

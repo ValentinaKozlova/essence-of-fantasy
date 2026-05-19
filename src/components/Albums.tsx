@@ -4,7 +4,7 @@ import './Albums.css';
 export function Albums() {
   return (
     <section className="albums" id="albums">
-      <div className="albums__inner">
+      <div className="inner">
         <div className="albums__header">
           <div>
             <p className="albums__label">Explore</p>

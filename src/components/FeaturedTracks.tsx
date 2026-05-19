@@ -21,7 +21,7 @@ export function FeaturedTracks({ onPlay, isPlaying, currentTrackId }: FeaturedTr
 
   return (
     <section className="tracks" id="discover">
-      <div className="tracks__inner">
+      <div className="inner">
         <div className="tracks__header">
           <div>
             <p className="tracks__label">What's Hot</p>

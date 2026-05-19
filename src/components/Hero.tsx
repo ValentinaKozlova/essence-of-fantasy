@@ -9,17 +9,10 @@ export function Hero() {
         <div className="hero__orb hero__orb--3" />
       </div>
 
-      <div className="hero__inner">
-        <div className="hero__tag">
-          <span className="hero__tag-dot" />
-          Essence of Fantasy
-        </div>
-
-        <h1 className="hero__title">
-          Valentyna
-          <br />
-          <em className="hero__title-accent">Kozlova</em>
-        </h1>
+      {/* <div className="hero__inner">
+        <h3 className="hero__title">
+          Valentyna Kozlova
+        </h3>
 
         <nav className="hero__roles">
           <a href="#session-singer" className="hero__role-link">Session Singer</a>
@@ -28,7 +21,7 @@ export function Hero() {
           <span className="hero__role-sep">|</span>
           <span className="hero__role-link hero__role-link--plain">Screenwriter</span>
         </nav>
-      </div>
+      </div> */}
 
       <div className="hero__scroll-hint">
         <span>Scroll to explore</span>

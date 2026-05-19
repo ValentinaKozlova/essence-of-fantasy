@@ -41,7 +41,7 @@ const platforms = [
 export function PlatformLinks() {
   return (
     <section className="platforms" id="links">
-      <div className="platforms__inner">
+      <div className="inner">
         <p className="platforms__eyebrow">Find Me On</p>
         <h2 className="platforms__title">Listen &amp; Support</h2>
         <div className="platforms__grid">

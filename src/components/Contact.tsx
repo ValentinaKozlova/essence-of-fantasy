@@ -16,7 +16,7 @@ export function Contact() {
 
   return (
     <section className="contact" id="contact">
-      <div className="contact__inner">
+      <div className="inner">
         <div className="contact__header">
           <p className="contact__eyebrow">Get In Touch</p>
           <h2 className="contact__title">Contact Me</h2>

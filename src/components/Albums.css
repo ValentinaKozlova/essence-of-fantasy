@@ -3,11 +3,6 @@
   background: var(--bg-secondary);
 }
 
-.albums__inner {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 0 24px;
-}
 
 .albums__header {
   display: flex;

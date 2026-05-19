@@ -3,7 +3,7 @@ import './Footer.css';
 export function Footer() {
   return (
     <footer className="footer">
-      <div className="footer__inner">
+      <div className="inner">
         <div className="footer__brand">
           <a href="#hero" className="footer__logo">
             <span className="footer__logo-icon">◈</span>

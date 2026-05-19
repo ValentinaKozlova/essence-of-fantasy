@@ -1,11 +1,6 @@
 .songwriting {
-  padding: 80px 24px;
+  padding: 80px 0;
   background: var(--bg-primary);
-}
-
-.songwriting__inner {
-  max-width: 1200px;
-  margin: 0 auto;
 }
 
 .songwriting__header {
@@ -25,7 +20,6 @@
   font-family: var(--font-display);
   font-size: clamp(28px, 4vw, 44px);
   font-weight: 800;
-  color: var(--text-primary);
   letter-spacing: -1px;
   margin-bottom: 12px;
 }
@@ -36,40 +30,211 @@
   max-width: 480px;
 }
 
-.songwriting__grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-}
+/* Playlist */
 
-.songwriting__video {
+.songwriting__playlist {
   background: var(--bg-card);
-  border-radius: var(--radius-md);
-  overflow: hidden;
+  border-radius: var(--radius-lg);
   border: 1px solid var(--border);
-  transition: transform 0.25s, box-shadow 0.25s;
+  overflow: hidden;
 }
 
-.songwriting__video:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-card);
+.songwriting__playlist-head {
+  display: grid;
+  grid-template-columns: 48px 1fr auto;
+  align-items: center;
+  padding: 10px 16px 10px 8px;
+  border-bottom: 1px solid var(--border);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
 }
 
-.songwriting__video iframe {
+.songwriting__col-duration {
+  text-align: right;
+}
+
+/* Track row */
+
+.songwriting__tracks {
+  display: flex;
+  flex-direction: column;
+}
+
+.songwriting__track {
+  display: grid;
+  grid-template-columns: 48px 48px 1fr auto;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 16px 8px 8px;
+  border-bottom: 1px solid var(--border);
+  background: none;
+  color: var(--text-secondary);
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.15s;
+  width: 100%;
+}
+
+.songwriting__track:last-child {
+  border-bottom: none;
+}
+
+.songwriting__track:hover {
+  background: var(--bg-card-hover);
+  color: var(--text-primary);
+}
+
+.songwriting__track--active {
+  color: var(--accent-primary);
+}
+
+.songwriting__track--active:hover {
+  color: var(--accent-primary);
+}
+
+/* Track number / play icon */
+
+.songwriting__track-num {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.songwriting__track-index {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.songwriting__play-icon {
+  display: none;
+  width: 18px;
+  height: 18px;
+  color: var(--text-primary);
+}
+
+.songwriting__track:hover .songwriting__track-index {
+  display: none;
+}
+
+.songwriting__track:hover .songwriting__play-icon {
+  display: block;
+}
+
+.songwriting__track--active .songwriting__track-index {
+  display: none;
+}
+
+.songwriting__track--active .songwriting__play-icon {
+  display: none;
+}
+
+/* Animated bars for active track */
+
+.songwriting__bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 2px;
+  height: 16px;
+}
+
+.songwriting__bars span {
+  display: block;
+  width: 3px;
+  background: var(--accent-primary);
+  border-radius: 2px;
+  animation: barBounce 0.8s ease-in-out infinite;
+}
+
+.songwriting__bars span:nth-child(1) { height: 60%; animation-delay: 0s; }
+.songwriting__bars span:nth-child(2) { height: 100%; animation-delay: 0.15s; }
+.songwriting__bars span:nth-child(3) { height: 70%; animation-delay: 0.3s; }
+
+@keyframes barBounce {
+  0%, 100% { transform: scaleY(1); }
+  50% { transform: scaleY(0.4); }
+}
+
+/* Thumbnail */
+
+.songwriting__track-thumb {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-sm);
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+/* Track info */
+
+.songwriting__track-info {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+
+.songwriting__track-title {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.songwriting__track--active .songwriting__track-title {
+  color: var(--accent-primary);
+}
+
+.songwriting__track-artist {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+/* Duration */
+
+.songwriting__track-duration {
+  font-size: 14px;
+  font-variant-numeric: tabular-nums;
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+/* Embedded player */
+
+.songwriting__player {
+  margin-top: 24px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--border-accent);
+  box-shadow: 0 8px 32px rgba(192, 132, 252, 0.15);
+}
+
+.songwriting__player iframe {
   display: block;
   width: 100%;
   aspect-ratio: 16 / 9;
   height: auto;
 }
 
-@media (max-width: 900px) {
-  .songwriting__grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
 @media (max-width: 600px) {
-  .songwriting__grid {
-    grid-template-columns: 1fr;
+  .songwriting__playlist-head {
+    grid-template-columns: 40px 1fr auto;
+  }
+
+  .songwriting__track {
+    grid-template-columns: 40px 40px 1fr auto;
+  }
+
+  .songwriting__track-thumb {
+    width: 40px;
+    height: 40px;
   }
 }
