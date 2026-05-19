@@ -3,7 +3,7 @@ import './Footer.css';
 export function Footer() {
   return (
     <footer className="footer">
-      <div className="inner">
+      {/* <div className="inner">
         <div className="footer__brand">
           <a href="#hero" className="footer__logo">
             <span className="footer__logo-icon">◈</span>
@@ -18,7 +18,7 @@ export function Footer() {
           <a href="#about">About</a>
           <a href="#contact">Contact</a>
         </nav>
-      </div>
+      </div> */}
 
       <div className="footer__bottom">
         <p>© 2026 Valentyna Kozlova. All rights reserved.</p>

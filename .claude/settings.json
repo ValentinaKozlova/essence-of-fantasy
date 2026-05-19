@@ -7,7 +7,11 @@
       "Bash(curl -s http://localhost:5173)",
       "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:5173)",
       "Bash(open http://localhost:5173)",
-      "WebFetch(domain:www.youtube.com)"
+      "WebFetch(domain:www.youtube.com)",
+      "Bash(git add *)",
+      "Bash(git pull *)",
+      "Bash(git push *)",
+      "Bash(git rm *)"
     ]
   }
 }
