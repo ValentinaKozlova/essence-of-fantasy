@@ -1,5 +1,5 @@
-import avatarUrl from '../img/vk-avatar.jpg';
-import './About.css';
+import avatarUrl from "../img/vk-avatar.jpg";
+import "./About.css";
 
 export function About() {
   return (
@@ -7,7 +7,11 @@ export function About() {
       <div className="inner">
         <div className="about__image-wrap">
           <div className="about__image-placeholder">
-            <img src={avatarUrl} alt="Valentyna Kozlova" className="about__avatar" />
+            <img
+              src={avatarUrl}
+              alt="Valentyna Kozlova"
+              className="about__avatar"
+            />
           </div>
           <div className="about__image-glow" />
         </div>
@@ -17,18 +21,20 @@ export function About() {
           <h2 className="about__title">About</h2>
 
           <p className="about__bio">
-            Valentyna Kozlova is a singer-songwriter, session vocalist, and
-            screenwriter. She's the author of a project <em>Essence of Fantasy</em>. Her music lives at
-            the boundary between cinematic storytelling and ethereal sound, weaving together
-            heartfelt lyrics, atmospheric melodies, and emotionally rich arrangements.
+            I'm a session vocalist with 12+ years' experience, a songwriter, and
+            a screenwriter.
           </p>
           <p className="about__bio">
-            She has 12+ years of experience as a session singer.
+            <em>Essence of Fantasy</em> is my project where music lives at the
+            intersection of cinematic storytelling and ethereal sound — weaving
+            heartfelt lyrics, atmospheric melodies, and emotionally rich
+            arrangements.
           </p>
           <p className="about__bio">
-            Her work is available on all major streaming platforms, and she actively connects
-            with her audience through Patreon, where supporters get exclusive access to her
-            creative process.
+            My music is available on all major streaming platforms. I also share
+            behind-the-scenes content and exclusive releases on Patreon — join
+            to support my work and get early access to new material and studio
+            updates.
           </p>
 
           {/* <div className="about__tags">
