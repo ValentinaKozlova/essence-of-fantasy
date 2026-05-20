@@ -1,12 +1,36 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import './Navbar.css';
 
 export function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const navRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    if (!mobileOpen) return;
+
+    const handlePointerDown = (e: PointerEvent) => {
+      if (navRef.current && !navRef.current.contains(e.target as Node)) {
+        setMobileOpen(false);
+      }
+    };
+
+    const handleKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setMobileOpen(false);
+    };
+
+    document.addEventListener('pointerdown', handlePointerDown);
+    document.addEventListener('keydown', handleKey);
+    return () => {
+      document.removeEventListener('pointerdown', handlePointerDown);
+      document.removeEventListener('keydown', handleKey);
+    };
+  }, [mobileOpen]);
 
   return (
-    <nav className="navbar">
-      <div className="inner">
+    <>
+      {mobileOpen && <div className="navbar__backdrop" aria-hidden="true" />}
+      <nav className="navbar" ref={navRef}>
+        <div className="inner">
         {/* <a href="#" className="navbar__logo">
           <span className="navbar__logo-icon">◈</span>
           <span className="navbar__logo-text">Essence<span className="navbar__logo-accent">of Fantasy</span></span>
@@ -30,7 +54,8 @@ export function Navbar() {
             <span />
           </button>
         </div>
-      </div>
-    </nav>
+        </div>
+      </nav>
+    </>
   );
 }

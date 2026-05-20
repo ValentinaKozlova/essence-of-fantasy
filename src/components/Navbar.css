@@ -118,6 +118,21 @@
   transition: all 0.2s;
 }
 
+.navbar__backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  z-index: 99;
+  animation: navbarBackdropFade 0.2s ease-out;
+}
+
+@keyframes navbarBackdropFade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
 @media (max-width: 768px) {
   .navbar__hamburger {
     display: flex;
