@@ -15,11 +15,11 @@ export function Hero() {
         </h3>
 
         <nav className="hero__roles">
-          <a href="#session-singer" className="hero__role-link">Session Singer</a>
+          <span className="hero__role">Session Singer</span>
           <span className="hero__role-sep">|</span>
-          <a href="#songwriting" className="hero__role-link">Song Writer</a>
+          <span className="hero__role">Song Writer</span>
           <span className="hero__role-sep">|</span>
-          <span className="hero__role-link hero__role-link--plain">Screenwriter</span>
+          <span className="hero__role">Screenwriter</span>
         </nav>
       </div>
 
