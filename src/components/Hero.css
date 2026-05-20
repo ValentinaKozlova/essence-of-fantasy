@@ -8,6 +8,7 @@
   align-items: center;
   justify-content: center;
   text-align: center;
+  overflow: hidden;
 }
 
 .hero__bg-orbs {
@@ -56,7 +57,9 @@
   height: 100%;
   width: 100%;
   /* max-width: 1280px; */
-  background: url("../img/banner-vk-s.jpg") center/contain no-repeat;
+  background: url("../img/banner-vk-s.jpg") no-repeat;
+  background-size: contain;
+  background-position: center;
 }
 
 .hero__title,
@@ -67,7 +70,7 @@
 }
 
 .hero__title {
-  font-family: 'Julius Sans One', sans-serif;
+  font-family: "Julius Sans One", sans-serif;
   font-size: clamp(20px, 12vw, 64px);
   font-weight: 400;
   line-height: 1;
@@ -93,7 +96,7 @@
 }
 
 .hero__role {
-  font-family: 'Julius Sans One', sans-serif;
+  font-family: "Julius Sans One", sans-serif;
   font-size: 18px;
   font-weight: 400;
   color: var(--text-secondary);
@@ -103,7 +106,7 @@
 }
 
 .hero__role-sep {
-  font-family: 'Julius Sans One', sans-serif;
+  font-family: "Julius Sans One", sans-serif;
   color: var(--text-muted);
   font-size: 18px;
 }
@@ -141,16 +144,57 @@
   }
 }
 
-@media (max-width: 600px) {
+@media (min-width: 992px) and (max-width: 1280px) {
+  .hero__title {
+    font-size: calc(48px + 12 * (100vw - 992px) / 288);
+  }
+
+  .hero__roles .hero__role,
+  .hero__roles .hero__role-sep {
+    font-size: calc(14px + 4 * (100vw - 992px) / 288);
+  }
+}
+
+@media (max-width: 993px) {
+  .hero__title {
+    font-size: 48px;
+  }
+  .hero__scroll-hint {
+    display: none;
+  }
+
+  .hero {
+    height: 400px;
+  }
+
+  .hero__inner {
+    background-position-x: 300%;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 993px) {
+  .hero__inner {
+    background-position-x: 180%;
+  }
+
+  .hero__title,
+  .hero__roles {
+    transform: translate(-25%, -50%);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero__title {
+    transform: translate(0, 200%);
+  }
+  .hero__roles {
+    display: none;
+  }
   .hero__title {
     letter-spacing: -2px;
   }
-
-  .hero__roles {
-    gap: 12px;
-  }
-
-  .hero__role-link {
-    font-size: 15px;
+  .hero__inner {
+    background-position: 100%, 100%;
+    background-size: 150%;
   }
 }
