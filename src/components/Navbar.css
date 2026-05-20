@@ -18,25 +18,7 @@
 }
 
 .navbar__logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  flex-shrink: 0;
-}
-
-.navbar__logo-icon {
-  font-size: 22px;
-  background: var(--gradient-accent);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.navbar__logo-text {
-  font-size: 17px;
-  font-weight: 700;
-  letter-spacing: -0.3px;
-  color: var(--text-primary);
+  display: none;
 }
 
 .navbar__logo-accent {
@@ -129,8 +111,12 @@
 }
 
 @keyframes navbarBackdropFade {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @media (max-width: 768px) {
@@ -162,5 +148,28 @@
 
   .navbar__btn--ghost {
     display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar .inner {
+    position: relative;
+  }
+
+  .navbar__logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+    font-family: "Julius Sans One", sans-serif;
+    font-size: 18px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .navbar__actions {
+    margin-left: auto;
   }
 }

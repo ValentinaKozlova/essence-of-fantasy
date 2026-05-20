@@ -25,12 +25,6 @@
   margin-bottom: 12px;
 }
 
-.session__desc {
-  font-size: 16px;
-  color: var(--text-secondary);
-  max-width: 480px;
-}
-
 .session__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);

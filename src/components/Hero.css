@@ -167,6 +167,10 @@
     height: 400px;
   }
 
+  .hero__bg-orbs {
+    display: none;
+  }
+
   .hero__inner {
     background-position-x: 300%;
   }
@@ -184,10 +188,7 @@
 }
 
 @media (max-width: 768px) {
-  .hero__title {
-    transform: translate(0, 200%);
-  }
-  .hero__roles {
+  .hero__title, .hero__roles {
     display: none;
   }
   .hero__title {

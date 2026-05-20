@@ -1,9 +1,9 @@
-import './SessionSinger.css';
+import "./SessionSinger.css";
 
 const videos = [
-  { id: 'HkQj1_sPUCU' },
-  { id: 'hHO7EkZJPQs' },
-  { id: '7dQhL_n_DWI' },
+  { id: "HkQj1_sPUCU" },
+  { id: "hHO7EkZJPQs" },
+  { id: "7dQhL_n_DWI" },
 ];
 
 export function SessionSinger() {
@@ -13,9 +13,6 @@ export function SessionSinger() {
         <div className="session__header">
           <p className="session__eyebrow">Vocal Work</p>
           <h2 className="session__title">Session Singer</h2>
-          <p className="session__desc">
-            Bringing life to tracks as a versatile session vocalist across genres.
-          </p>
         </div>
         <div className="session__grid">
           {videos.map((video, i) => (
