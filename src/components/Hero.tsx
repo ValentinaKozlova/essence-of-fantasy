@@ -22,11 +22,6 @@ export function Hero() {
           <span className="hero__role">Screenwriter</span>
         </nav>
       </div>
-
-      <div className="hero__scroll-hint">
-        <span>Scroll to explore</span>
-        <div className="hero__scroll-arrow" />
-      </div>
     </section>
   );
 }

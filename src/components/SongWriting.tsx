@@ -20,8 +20,8 @@ export function SongWriting() {
     <section className="songwriting" id="songwriting">
       <div className="inner">
         <div className="songwriting__header">
-          <p className="songwriting__eyebrow">Original Music</p>
-          <h2 className="songwriting__title">Song Writing</h2>
+          <p className="eyebrow">Original Music</p>
+          <h2 className="title songwriting__title">Song Writing</h2>
           <p className="songwriting__desc">
             Original compositions that weave storytelling with ethereal soundscapes.
           </p>

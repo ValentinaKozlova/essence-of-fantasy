@@ -7,20 +7,7 @@
   margin-bottom: 48px;
 }
 
-.songwriting__eyebrow {
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--accent-primary);
-  margin-bottom: 8px;
-}
-
 .songwriting__title {
-  font-family: var(--font-display);
-  font-size: clamp(28px, 4vw, 44px);
-  font-weight: 800;
-  letter-spacing: -1px;
   margin-bottom: 12px;
 }
 

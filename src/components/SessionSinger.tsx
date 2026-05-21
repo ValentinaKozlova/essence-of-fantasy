@@ -11,8 +11,8 @@ export function SessionSinger() {
     <section className="session" id="session-singer">
       <div className="inner">
         <div className="session__header">
-          <p className="session__eyebrow">Vocal Work</p>
-          <h2 className="session__title">Session Singer</h2>
+          <p className="eyebrow">Vocal Work</p>
+          <h2 className="title session__title">Session Singer</h2>
         </div>
         <div className="session__grid">
           {videos.map((video, i) => (

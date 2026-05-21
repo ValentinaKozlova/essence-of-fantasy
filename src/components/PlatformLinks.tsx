@@ -42,8 +42,8 @@ export function PlatformLinks() {
   return (
     <section className="platforms" id="links">
       <div className="inner">
-        <p className="platforms__eyebrow">Find Me On</p>
-        <h2 className="platforms__title">Listen &amp; Support</h2>
+        <p className="eyebrow">Find Me On</p>
+        <h2 className="title platforms__title">Listen &amp; Support</h2>
         <div className="platforms__grid">
           {platforms.map(p => (
             <a

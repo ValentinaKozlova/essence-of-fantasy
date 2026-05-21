@@ -17,8 +17,8 @@ export function About() {
         </div>
 
         <div className="about__content">
-          <p className="about__eyebrow">The Artist</p>
-          <h2 className="about__title">About</h2>
+          <p className="eyebrow">The Artist</p>
+          <h2 className="title about__title">About</h2>
 
           <p className="about__bio">
             I'm a session vocalist with 12+ years' experience, a songwriter, and

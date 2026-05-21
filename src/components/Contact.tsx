@@ -32,8 +32,8 @@ export function Contact() {
     <section className="contact" id="contact">
       <div className="inner">
         <div className="contact__header">
-          <p className="contact__eyebrow">Get In Touch</p>
-          <h2 className="contact__title">Contact Me</h2>
+          <p className="eyebrow">Get In Touch</p>
+          <h2 className="title contact__title">Contact Me</h2>
           <p className="contact__desc">
             Whether you're looking for a session vocalist, a co-writer, or just want to say hello — I'd love to hear from you.
           </p>
