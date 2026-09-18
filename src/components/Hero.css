@@ -1,12 +1,6 @@
 .hero {
   position: relative;
-  height: 400px;
   background-color: #000;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
   overflow: hidden;
 }
 
@@ -50,114 +44,119 @@
 
 .hero__inner {
   position: relative;
-  display: flex;
-  flex-direction: column;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(420px, 1.15fr);
   align-items: center;
-  height: 100%;
-  width: 100%;
-  /* max-width: 1280px; */
-  background: url("../img/banner-vk.png") no-repeat;
-  background-size: contain;
-  background-position: center;
+  gap: 32px;
 }
 
-.hero__title,
-.hero__roles {
+.hero__content {
   position: relative;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  z-index: 1;
+  /* padding: 64px 0; */
+  display: flex;
+  flex-direction: column;
+}
+
+.hero__eyebrow {
+  margin-bottom: 14px;
+  color: var(--accent-hot);
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 16px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: normal;
 }
 
 .hero__title {
   font-family: "Julius Sans One", sans-serif;
-  font-size: clamp(20px, 12vw, 64px);
+  font-size: clamp(48px, 6vw, 78px);
   font-weight: 400;
-  line-height: 1;
-  letter-spacing: -4px;
+  line-height: 1.05;
+  letter-spacing: 0;
   color: var(--text-primary);
-  margin: 0;
-}
-
-.hero__title-accent {
-  font-style: italic;
-  background: var(--gradient-hot);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  margin: 0 0 24px;
 }
 
 .hero__roles {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.hero__role {
   font-family: "Julius Sans One", sans-serif;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 400;
   color: var(--text-secondary);
-  transition: color 0.2s;
-  letter-spacing: 0.02em;
+  line-height: 1.7;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
 }
 
-.hero__role-sep {
-  font-family: "Julius Sans One", sans-serif;
-  color: var(--text-muted);
-  font-size: 18px;
+.hero__image-wrap {
+  align-self: end;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
 }
 
-@media (min-width: 992px) and (max-width: 1280px) {
-  .hero__title {
-    font-size: calc(48px + 12 * (100vw - 992px) / 288);
-  }
-
-  .hero__roles .hero__role,
-  .hero__roles .hero__role-sep {
-    font-size: calc(14px + 4 * (100vw - 992px) / 288);
-  }
+.hero__image {
+  width: min(100%, 720px);
+  height: auto;
+  object-fit: contain;
 }
 
-@media (max-width: 993px) {
+@media (max-width: 900px) {
+  .hero__inner {
+    grid-template-columns: minmax(0, 1fr) minmax(340px, 1fr);
+    gap: 12px;
+  }
   .hero__title {
     font-size: 48px;
-  }
-  .hero__scroll-hint {
-    display: none;
-  }
-
-  .hero__bg-orbs {
-    display: none;
-  }
-
-  .hero__inner {
-    background-position-x: 300%;
-  }
-}
-
-@media (min-width: 601px) and (max-width: 993px) {
-  .hero__inner {
-    background-position-x: 180%;
-  }
-
-  .hero__title,
-  .hero__roles {
-    transform: translate(-25%, -50%);
   }
 }
 
 @media (max-width: 768px) {
-  .hero__title, .hero__roles {
-    display: none;
-  }
-  .hero__title {
-    letter-spacing: -2px;
-  }
   .hero__inner {
-    background-position: 100%, 100%;
-    background-size: 150%;
+    grid-template-columns: 1fr;
+    gap: 0;
+    padding-top: 5em;
+  }
+
+  .hero__content {
+    padding: 0;
+    text-align: center;
+  }
+
+  .hero__title {
+    font-size: clamp(40px, 13vw, 56px);
+  }
+
+  .hero__roles {
+    font-size: 14px;
+  }
+
+  .hero__image-wrap {
+    justify-content: center;
+    margin: 24px -24px 0;
+  }
+
+  .hero__image {
+    width: min(100%, 620px);
+  }
+
+  .hero__title, .hero__bg-orbs, .hero__roles {
+    display: none;
+  } 
+}
+
+@media (max-width: 480px) {
+  .hero__image {
+    height: 220px;
+  }
+
+  .hero__inner {
+    padding-top: 3em;
+  }
+
+  .hero__content {
+    position: absolute;
+    display: none; /* TODO: remove it */
   }
 }

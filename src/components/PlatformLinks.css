@@ -43,7 +43,7 @@
   background: var(--bg-card-hover);
   border-color: var(--platform-color, var(--border-accent));
   transform: translateY(-4px);
-  box-shadow: var(--shadow-card);
+  box-shadow: var(--shadow-glow);
 }
 
 .platforms__card:hover::after {

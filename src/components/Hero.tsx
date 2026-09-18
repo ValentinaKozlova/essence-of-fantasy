@@ -1,4 +1,5 @@
 import './Hero.css';
+import bannerImage from '../img/banner-vk.png';
 
 export function Hero() {
   return (
@@ -10,17 +11,19 @@ export function Hero() {
       </div>
 
       <div className="inner hero__inner">
-        <h3 className="hero__title">
-          Valentyna Kozlova
-        </h3>
+        <div className="hero__content">
+          <p className="hero__eyebrow">Vocalist in Prague</p>
+          <h1 className="hero__title">Valentyna Kozlova</h1>
+          <p className="hero__roles">Session Singer | Song Writer | Screen Writer</p>
+        </div>
 
-        <nav className="hero__roles">
-          <span className="hero__role">Session Singer</span>
-          <span className="hero__role-sep">|</span>
-          <span className="hero__role">Song Writer</span>
-          <span className="hero__role-sep">|</span>
-          <span className="hero__role">Screenwriter</span>
-        </nav>
+        <div className="hero__image-wrap">
+          <img
+            className="hero__image"
+            src={bannerImage}
+            alt="Valentyna Kozlova"
+          />
+        </div>
       </div>
     </section>
   );
