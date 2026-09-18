@@ -62,9 +62,8 @@ export function PlatformLinks() {
               target="_blank"
               rel="noopener noreferrer"
               className="platforms__card"
-              style={{ "--platform-color": p.color } as React.CSSProperties}
             >
-              <div className="platforms__icon" style={{ color: p.color }}>
+              <div className="platforms__icon">
                 {p.icon}
               </div>
               <div className="platforms__info">
